@@ -5,10 +5,10 @@
    
 
     <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Product]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT TOP 5 * FROM [Product]"></asp:SqlDataSource>
     <br />
    
-
+    <asp:Label ID="Label1" runat="server"></asp:Label>
     <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>     
           <div class="card line" style="width: 18rem;" >
@@ -17,6 +17,7 @@
                         <h5 class="card-title"><%# Eval("Name") %></h5>
                         <p class="card-text"><%# Eval("description") %></p>
                         <a href="#" class="btn btn-primary">Add to cart</a>
+                        <asp:Button ID="Button1" runat="server" Text="Click here" OnClick="Button1_Click" /> 
                     </div>
                 </div>
             </ItemTemplate>
