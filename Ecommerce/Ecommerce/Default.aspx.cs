@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using Microsoft.AspNet.Identity;
 
 namespace Ecommerce
 {
@@ -19,7 +20,17 @@ namespace Ecommerce
         }
         protected void Button1_Click(Object sender, EventArgs e)
         {
-            Label1.Text = "Clicked";
+            bool isUserAuthenticated = System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
+            if(isUserAuthenticated)
+            {
+                
+            }
+            else
+            {
+                Label1.Text = "26";
+                Response.Redirect("/Account/login?msg=You are not logged in!!");
+                
+            }
         }
     }
 }

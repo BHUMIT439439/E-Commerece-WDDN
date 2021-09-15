@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <form runat="server">
@@ -59,12 +59,14 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li><a class="nav-link active" runat="server" href="~/Account/Register">Register</a></li>
+                               <li><a class="nav-link active" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a class="nav-link active" runat="server" href="~/Account/Login">Log in</a></li>
+                                
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
+                                 <li><a href="Product/Cart"><img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-vector-pink-supermarket-shopping-cart-logo-png-image_4282588.jpg" style="width:2.5rem;border-radius:50%" /></a></li>&nbsp;
                                 <li><a class="nav-link active"  runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" CssClass="nav-link active" />

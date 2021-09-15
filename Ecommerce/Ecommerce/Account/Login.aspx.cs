@@ -12,6 +12,7 @@ namespace Ecommerce.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            requestString.Text = Request.QueryString["msg"];
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
@@ -54,7 +55,7 @@ namespace Ecommerce.Account
                         FailureText.Text = "Invalid login attempt";
                         ErrorMessage.Visible = true;
                         break;
-                }
+                }   
             }
         }
     }

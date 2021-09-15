@@ -5,6 +5,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
 
+    
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
@@ -16,6 +17,7 @@
                             <asp:Literal runat="server" ID="FailureText" />
                         </p>
                     </asp:PlaceHolder>
+                    <asp:Label ID="requestString" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">

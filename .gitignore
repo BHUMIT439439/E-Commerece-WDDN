@@ -385,3 +385,4 @@ FodyWeavers.xsd
 # SQL Server files
 *.mdf
 App_Data
+*.mdf
