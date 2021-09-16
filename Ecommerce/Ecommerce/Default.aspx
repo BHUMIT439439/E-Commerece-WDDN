@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%# Eval("Name") %></h5>
                         <p class="card-text"><%# Eval("description") %></p>
-                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Add To Cart" OnClick="Button1_Click" /> 
+                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Add To Cart" OnClick="Button1_Click" CommandArgument='<%# Eval("id")%>' /> 
                     </div>
                 </div>
             </ItemTemplate>
