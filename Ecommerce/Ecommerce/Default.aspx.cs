@@ -27,7 +27,7 @@ namespace Ecommerce
             {
                 Button btn = (Button)sender;
 
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\bhumit\Desktop\E-Commerece-WDDN\Ecommerce\Ecommerce\App_Data\aspnet-Ecommerce-20210902094040.mdf;Initial Catalog=aspnet-Ecommerce-20210902094040;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=C:\Users\ASUS\Documents\WDDN Project\E-Commerece-WDDN\Ecommerce\Ecommerce\App_Data\aspnet-Ecommerce-20210902094040.mdf;Initial Catalog=aspnet-Ecommerce-20210902094040;Integrated Security=True");
                 con.Open();
 
                 string uid = System.Web.HttpContext.Current.User.Identity.GetUserId();
@@ -39,10 +39,13 @@ namespace Ecommerce
                 cmd.ExecuteNonQuery();
 
                 con.Close();
+                ScriptManager.RegisterStartupScript(this, this.GetType(),
+                "Confirm",
+                "Confirm('Successfully product added in to cart');window.location ='';",
+                true);
             }
             else
             {
-                Label1.Text = "26";
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
                 "alert",
                 "alert('First you have to logged in and then you can put product in cart');window.location ='/Account/login.aspx';",

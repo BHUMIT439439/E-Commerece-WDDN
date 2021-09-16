@@ -66,7 +66,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                 <li><a href="Product/Cart"><img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-vector-pink-supermarket-shopping-cart-logo-png-image_4282588.jpg" style="width:2.5rem;border-radius:50%" /></a></li>&nbsp;
+                                 <li><a href="/Cart"><img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-vector-pink-supermarket-shopping-cart-logo-png-image_4282588.jpg" style="width:2.5rem;border-radius:50%" /></a></li>&nbsp;
                                 <li><a class="nav-link active"  runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" CssClass="nav-link active" />
