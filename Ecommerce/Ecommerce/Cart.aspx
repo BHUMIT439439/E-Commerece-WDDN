@@ -24,7 +24,7 @@
                         
                         <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: initial; display: -webkit-box; -webkit-line-clamp: 2;-webkit-box-orient: vertical;"><%# Eval("description") %></p>
                         <h5 class="card-title">PRICE:-<%# Eval("Price")%>₹/-</h5>
-                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="DELETE" OnClick="Button1_Click" CommandArgument='<%# Eval("id")%>' /> 
+                        <asp:Button ID="Button1" CssClass="btn btn-danger" runat="server" Text="DELETE" OnClick="Button1_Click" CommandArgument='<%# Eval("id")%>' /> 
                     
                     </div>
                     </div>
@@ -33,7 +33,8 @@
             </ItemTemplate>
         </asp:DataList>
 
-
+         <asp:LinkButton ID="Button1" CssClass="btn btn-success" runat="server" Text="Proceed to buy" href="../PlaceOrder"/> 
+                    
 
         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
 
