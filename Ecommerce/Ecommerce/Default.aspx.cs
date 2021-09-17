@@ -40,8 +40,8 @@ namespace Ecommerce
 
                 con.Close();
                 ScriptManager.RegisterStartupScript(this, this.GetType(),
-                "Confirm",
-                "Confirm('Successfully product added in to cart');window.location ='';",
+                "alert",
+                "alert('Successfully product added in to cart');window.location ='';",
                 true);
             }
             else

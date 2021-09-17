@@ -20,7 +20,7 @@
                         <h2 class="card-title" style="margin:2rem 0rem;font-weight:bold"><%# Eval("Name") %></h2>
                         <p class="card-text" style="text-overflow:ellipsis;width:70%;font-size:1.5rem"><%# Eval("description") %></p>
                         <h5 class="card-text" style="color:red">Deal Prize:-<%# Eval("price") %>/-</h5><br />
-                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Add To Cart" CommandArgument='<%# Eval("id")%>' /> 
+                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Add To Cart" OnClick="Button1_Click" CommandArgument='<%# Eval("id")%>' /> 
                                 
                         </div>
                 </div>

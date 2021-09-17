@@ -1,48 +1,42 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="Cart.aspx.cs" Inherits="Ecommerce.Cart"%>
+﻿    <%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="Cart.aspx.cs" Inherits="Ecommerce.Cart"%>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-
-    <asp:Label ID="userid" runat="server" style="display:none"></asp:Label>
+    <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [CartTable] WHERE ([CustomerID] = @CustomerID)">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="userid" Name="CustomerID" PropertyName="Text" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
-            <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
-        </Columns>
-    </asp:GridView>  
+        <asp:Label ID="userid" runat="server" style="display:none"></asp:Label>
 
 
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Product].* FROM [Product] INNER JOIN [CartTable] ON ([Product].ID=[CartTable].productid) WHERE ([CartTable].CustomerID = @CustomerID)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="userid" Name="CustomerID" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 
 
-
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT * FROM [Product] WHERE ([Id] = @Id)">
-        <SelectParameters>
-            <asp:ControlParameter ControlID="GridView1" Name="Id" PropertyName="SelectedValue" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2">
-        <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-            <asp:BoundField DataField="description" HeaderText="description" SortExpression="description" />
-            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
-            <asp:BoundField DataField="stock" HeaderText="stock" SortExpression="stock" />
-            <asp:BoundField DataField="image" HeaderText="image" SortExpression="image" />
-            <asp:BoundField DataField="Accessories" HeaderText="Accessories" SortExpression="Accessories" />
-            <asp:BoundField DataField="Company Name" HeaderText="Company Name" SortExpression="Company Name" />
-        </Columns>
-    </asp:GridView>
+        <br />
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal">
+            <ItemTemplate>     
+                    <div class="card line" style="width:auto;height:auto;margin:10px" >
+                    <div style="display:flex">
+                        <a href="/Details?pid=<%# Eval("id") %>" ><img class="card-img-top" src="<%# Eval("image") %>"" alt="Card image cap" style="width:10rem"></a>
+                    <div class="card-body"">
+                        <h5 class="card-title"><%# Eval("Name") %></h5>
+                        
+                        <p class="card-text" style="overflow: hidden;text-overflow: ellipsis;white-space: initial; display: -webkit-box; -webkit-line-clamp: 2;-webkit-box-orient: vertical;"><%# Eval("description") %></p>
+                        <h5 class="card-title">PRICE:-<%# Eval("Price")%>₹/-</h5>
+                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="DELETE" OnClick="Button1_Click" CommandArgument='<%# Eval("id")%>' /> 
+                    
+                    </div>
+                    </div>
+                        
+                </div>
+            </ItemTemplate>
+        </asp:DataList>
 
 
 
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
 
 
-</asp:Content>
+
+    </asp:Content>
