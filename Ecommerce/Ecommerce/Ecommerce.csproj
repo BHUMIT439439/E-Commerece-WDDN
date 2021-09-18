@@ -170,6 +170,7 @@
     <Content Include="App_Data\Ecommerce_log.ldf">
       <DependentUpon>Ecommerce.mdf</DependentUpon>
     </Content>
+    <Content Include="Bill.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -344,6 +345,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Bill.aspx.cs">
+      <DependentUpon>Bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill.aspx.designer.cs">
+      <DependentUpon>Bill.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

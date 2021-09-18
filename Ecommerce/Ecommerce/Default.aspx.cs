@@ -33,7 +33,7 @@ namespace Ecommerce
                 string uid = System.Web.HttpContext.Current.User.Identity.GetUserId();
                 string pid = btn.CommandArgument.ToString();
 
-                string myQuery = "insert into CartTable values('" + pid + "','" + uid+"')";
+                string myQuery = "insert into CartTable(productid,customerid) values('" + pid + "','" + uid+"')";
 
                 SqlCommand cmd = new SqlCommand(myQuery, con);
                 cmd.ExecuteNonQuery();

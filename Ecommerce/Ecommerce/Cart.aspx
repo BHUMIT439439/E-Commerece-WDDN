@@ -34,8 +34,6 @@
         </asp:DataList>
 
          <asp:LinkButton ID="Button1" CssClass="btn btn-success" runat="server" Text="Proceed to buy" href="../PlaceOrder"/> 
-                    
-
         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
 
 
