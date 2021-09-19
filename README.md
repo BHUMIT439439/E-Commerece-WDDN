@@ -1,1 +1,1 @@
-Ecommerece projrct in dot Net
+Ecommerece project in dot Net
