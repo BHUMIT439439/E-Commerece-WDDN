@@ -18,9 +18,7 @@ namespace Ecommerce
         protected void Page_Load(object sender, EventArgs e)
         {
             userid.Text = System.Web.HttpContext.Current.User.Identity.GetUserId().ToString();
-
-
-		}
+        }
 
         protected void Button1_Click(Object sender, EventArgs e)
         {

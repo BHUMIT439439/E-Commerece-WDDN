@@ -54,6 +54,18 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page"  runat="server" href="~/Contact">Contact</a>
                 </li>
+                  <li>
+                      <input type="search" id="search" class="query" name="search"/>
+                      <asp:LinkButton ID="Search" CssClass="btn btn-success search" runat="server" Text="Search" href="/Search?"/>                                           
+                      <script>
+                          const search = document.querySelector(".search");
+                          console.log(search);
+                          search.addEventListener("click", function () {
+                                    const query = document.querySelector(".query");
+                                    search.href += `search=${query.value}`;
+                                                });
+                      </script>
+                  </li>
               </ul>
               <div class="d-flex">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -61,7 +73,6 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                <li><a class="nav-link active" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a class="nav-link active" runat="server" href="~/Account/Login">Log in</a></li>
-                                
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

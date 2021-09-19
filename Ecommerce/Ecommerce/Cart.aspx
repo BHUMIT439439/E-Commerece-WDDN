@@ -2,7 +2,6 @@
 
     <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-
         <asp:Label ID="userid" runat="server" style="display:none"></asp:Label>
 
 
@@ -33,9 +32,8 @@
             </ItemTemplate>
         </asp:DataList>
 
-         <asp:LinkButton ID="Button1" CssClass="btn btn-success" runat="server" Text="Proceed to buy" href="../PlaceOrder"/> 
+         <asp:LinkButton ID="Button1" CssClass="btn btn-success" runat="server" Text="Buy Now" href="../PlaceOrder"/> 
         <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
-
 
 
     </asp:Content>

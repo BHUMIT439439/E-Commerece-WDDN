@@ -44,11 +44,9 @@
                                                     const mobileno = document.querySelector(".mobileno");
                                                     confirm.href += `name=${name.value}&address=${address.value}&mobileno=${mobileno.value}`;
                                                 });
-
                                             </script>
         
                                         </div>
-                                    <asp:Label ID="name1" runat="server" Text="hello"></asp:Label>
                                     
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
