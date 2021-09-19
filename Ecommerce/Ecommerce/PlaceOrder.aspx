@@ -37,11 +37,14 @@
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <asp:LinkButton ID="Button1" CssClass="btn btn-success confirm" runat="server" Text="Proceed to buy" href="../Bill?"/>
                                             <script>
-                                                const name = document.querySelector(".name");
-                                                const address = document.querySelector(".address");
-                                                const mobileno = document.querySelector(".mobileno");
                                                 const confirm = document.querySelector(".confirm");
-                                                confirm.href += `name=${name.value}&address=${address.value}&mobileno=${mobileno.value}`;
+                                                confirm.addEventListener("click", function () {
+                                                    const name = document.querySelector(".name");
+                                                    const address = document.querySelector(".address");
+                                                    const mobileno = document.querySelector(".mobileno");
+                                                    confirm.href += `name=${name.value}&address=${address.value}&mobileno=${mobileno.value}`;
+                                                });
+
                                             </script>
         
                                         </div>
